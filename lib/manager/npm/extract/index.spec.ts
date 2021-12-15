@@ -275,7 +275,7 @@ describe('manager/npm/extract/index', () => {
           yarn: 'disabled',
           vscode: '>=1.49.3',
         },
-        main: 'index.js',
+        main: 'issues.js',
       };
       const pJsonStr = JSON.stringify(pJson);
       const res = await npmExtract.extractPackageFile(
@@ -288,7 +288,7 @@ describe('manager/npm/extract/index', () => {
     });
     it('extracts volta', async () => {
       const pJson = {
-        main: 'index.js',
+        main: 'issues.js',
         engines: {
           node: '8.9.2',
         },
@@ -311,7 +311,7 @@ describe('manager/npm/extract/index', () => {
 
     it('extracts volta yarn unknown-version', async () => {
       const pJson = {
-        main: 'index.js',
+        main: 'issues.js',
         engines: {
           node: '8.9.2',
         },

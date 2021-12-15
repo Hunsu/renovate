@@ -148,8 +148,7 @@ export interface EnsureCommentRemovalConfig {
 
 export type EnsureIssueResult = 'updated' | 'created';
 
-export interface Platform {
-  findIssue(title: string): Promise<Issue | null>;
+export interface Platform extends DependencyDashboardWriter {
   getIssueList(): Promise<Issue[]>;
   getIssue?(number: number, useCache?: boolean): Promise<Issue>;
   getVulnerabilityAlerts(): Promise<VulnerabilityAlert[]>;
@@ -157,10 +156,6 @@ export interface Platform {
   getJsonFile(fileName: string, repo?: string): Promise<any | null>;
   initRepo(config: RepoParams): Promise<RepoResult>;
   getPrList(): Promise<Pr[]>;
-  ensureIssueClosing(title: string): Promise<void>;
-  ensureIssue(
-    issueConfig: EnsureIssueConfig
-  ): Promise<EnsureIssueResult | null>;
   massageMarkdown(prBody: string): string;
   updatePr(prConfig: UpdatePrConfig): Promise<void>;
   mergePr(config: MergePRConfig): Promise<boolean>;
@@ -188,4 +183,14 @@ export interface Platform {
   getBranchPr(branchName: string): Promise<Pr | null>;
   initPlatform(config: PlatformParams): Promise<PlatformResult>;
   filterUnavailableUsers?(users: string[]): Promise<string[]>;
+}
+
+export interface DependencyDashboardWriter {
+  ensureIssue(
+    issueConfig: EnsureIssueConfig
+  ): Promise<EnsureIssueResult | null>;
+
+  findIssue(dependencyDashboardTitle: string): Promise<Issue>;
+
+  ensureIssueClosing(dependencyDashboardTitle: string): Promise<void>;
 }

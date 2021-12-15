@@ -11,7 +11,7 @@ describe('manager/npm/extract/type', () => {
       expect(isLibrary).toBe(false);
     });
     it('is a library if has a main', () => {
-      const isLibrary = mightBeABrowserLibrary({ main: 'index.js ' });
+      const isLibrary = mightBeABrowserLibrary({ main: 'issues.js ' });
       expect(isLibrary).toBe(true);
     });
   });

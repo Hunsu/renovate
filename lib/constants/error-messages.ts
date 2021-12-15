@@ -55,3 +55,6 @@ export const BUNDLER_INVALID_CREDENTIALS = 'bundler-credentials';
 
 // Unknown Error
 export const UNKNOWN_ERROR = 'unknown-error';
+
+export const SELF_HOSTED_DASHBOARD_URL_UNAVAILABLE =
+  'You should configure self hosted dependency dashboard url';

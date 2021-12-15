@@ -416,6 +416,20 @@ const options: RenovateOptions[] = [
     default: false,
   },
   {
+    name: 'dependencyDashboardOutsidePlatform',
+    description:
+      'Set to `true` and Renovate will write issues to a self-hosted. Make sure to provide the url',
+    type: 'boolean',
+    default: false,
+  },
+  {
+    name: 'dependencyDashboardUrl',
+    description:
+      'The url where the dependency dashboard is hosted. You should enable `dependencyDashboardOutsidePlatform` first',
+    type: 'string',
+    default: null,
+  },
+  {
     name: 'dependencyDashboardTitle',
     description: 'Title to use for the Dependency Dashboard issue.',
     type: 'string',

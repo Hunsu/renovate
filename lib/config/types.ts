@@ -180,6 +180,8 @@ export interface RenovateConfig
   fileList?: string[];
   configWarningReuseIssue?: boolean;
   dependencyDashboard?: boolean;
+  dependencyDashboardOutsidePlatform?: boolean;
+  dependencyDashboardUrl?: string;
   dependencyDashboardAutoclose?: boolean;
   dependencyDashboardChecks?: Record<string, string>;
   dependencyDashboardIssue?: number;
